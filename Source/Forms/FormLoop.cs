@@ -1,4 +1,4 @@
-﻿using AgTwo.Properties;
+﻿using ModSim.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -9,7 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AgTwo
+namespace ModSim
 {
     public partial class FormLoop : Form
     {

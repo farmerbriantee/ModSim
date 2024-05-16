@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Globalization;
 
-namespace AgTwo
+namespace ModSim
 {
     public partial class FormLoop
     {

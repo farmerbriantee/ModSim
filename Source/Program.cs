@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace AgTwo
+namespace ModSim
 {
     internal static class Program
     {

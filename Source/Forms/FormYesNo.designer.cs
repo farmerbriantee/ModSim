@@ -1,4 +1,4 @@
-﻿namespace AgTwo
+﻿namespace ModSim
 {
     partial class FormYesNo
     {
@@ -59,7 +59,7 @@
             this.btnSerialCancel.FlatAppearance.BorderSize = 0;
             this.btnSerialCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerialCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSerialCancel.Image = global::AgTwo.Properties.Resources.Cancel64;
+            this.btnSerialCancel.Image = global::ModSim.Properties.Resources.Cancel64;
             this.btnSerialCancel.Location = new System.Drawing.Point(8, 161);
             this.btnSerialCancel.Name = "btnSerialCancel";
             this.btnSerialCancel.Size = new System.Drawing.Size(105, 64);
@@ -75,7 +75,7 @@
             this.btnSerialOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerialOK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSerialOK.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSerialOK.Image = global::AgTwo.Properties.Resources.OK64;
+            this.btnSerialOK.Image = global::ModSim.Properties.Resources.OK64;
             this.btnSerialOK.Location = new System.Drawing.Point(136, 161);
             this.btnSerialOK.Name = "btnSerialOK";
             this.btnSerialOK.Size = new System.Drawing.Size(105, 64);

@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace AgTwo
+namespace ModSim
 {
     public partial class FormLoop
     {

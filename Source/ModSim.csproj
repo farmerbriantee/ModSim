@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{38E5D197-82BB-42DE-83F8-9D550D09BCDC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AgTwo</RootNamespace>
-    <AssemblyName>AgTwo</AssemblyName>
+    <RootNamespace>ModSim</RootNamespace>
+    <AssemblyName>ModSim</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

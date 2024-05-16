@@ -1,4 +1,4 @@
-﻿namespace AgTwo
+﻿namespace ModSim
 {
     partial class FormGPSData
     {

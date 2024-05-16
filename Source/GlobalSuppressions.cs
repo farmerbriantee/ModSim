@@ -5,11 +5,11 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormGPSData.timer1_Tick(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.btnRelayTest_Click(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.btnResetTimer_Click(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.btnUDP_Click(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.deviceManagerToolStripMenuItem_Click(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.lblIP_Click(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.oneSecondLoopTimer_Tick(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:AgTwo.FormLoop.toolStripEthernet_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormGPSData.timer1_Tick(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.btnRelayTest_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.btnResetTimer_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.btnUDP_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.deviceManagerToolStripMenuItem_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.lblIP_Click(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.oneSecondLoopTimer_Tick(System.Object,System.EventArgs)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:ModSim.FormLoop.toolStripEthernet_Click(System.Object,System.EventArgs)")]

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AgTwo {
+namespace ModSim {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AgTwo {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AgTwo.gStr", typeof(gStr).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ModSim.gStr", typeof(gStr).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace AgTwo {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://github.com/farmerbriantee/AgOpenGPS/wiki/03.-AgTwo-Orientation.
+        ///   Looks up a localized string similar to https://github.com/farmerbriantee/AgOpenGPS/wiki/03.-ModSim-Orientation.
         /// </summary>
         internal static string gsAgIOHelp {
             get {

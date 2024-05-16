@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AgTwo
+namespace ModSim
 {
     public partial class FormYes : Form
     {

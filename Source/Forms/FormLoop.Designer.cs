@@ -1,5 +1,5 @@
 ﻿
-namespace AgTwo
+namespace ModSim
 {
     partial class FormLoop
     {
@@ -157,7 +157,7 @@ namespace AgTwo
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripEthernet,
             this.deviceManagerToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::AgTwo.Properties.Resources.Settings48;
+            this.toolStripDropDownButton1.Image = global::ModSim.Properties.Resources.Settings48;
             this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -172,7 +172,7 @@ namespace AgTwo
             // deviceManagerToolStripMenuItem
             // 
             this.deviceManagerToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deviceManagerToolStripMenuItem.Image = global::AgTwo.Properties.Resources.DeviceManager;
+            this.deviceManagerToolStripMenuItem.Image = global::ModSim.Properties.Resources.DeviceManager;
             this.deviceManagerToolStripMenuItem.Name = "deviceManagerToolStripMenuItem";
             this.deviceManagerToolStripMenuItem.Size = new System.Drawing.Size(296, 70);
             this.deviceManagerToolStripMenuItem.Text = "Device Manager";
@@ -344,7 +344,7 @@ namespace AgTwo
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::AgTwo.Properties.Resources.Cancel64;
+            this.btnExit.Image = global::ModSim.Properties.Resources.Cancel64;
             this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnExit.Location = new System.Drawing.Point(583, 389);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);

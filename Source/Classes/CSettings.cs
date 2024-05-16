@@ -6,7 +6,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 
 
-namespace AgTwo
+namespace ModSim
 {
     public static class SettingsIO
     {
