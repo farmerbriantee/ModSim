@@ -8,7 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ModSim
 {
-    public partial class FormLoop
+    public partial class FormSim
     {
         // UDP Sockets
         public Socket UDPSocket;

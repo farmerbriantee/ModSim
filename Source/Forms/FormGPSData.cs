@@ -8,11 +8,11 @@ namespace ModSim
 {
     public partial class FormGPSData : Form
     {
-        private readonly FormLoop mf = null;
+        private readonly FormSim mf = null;
 
         public FormGPSData(Form callingForm)
         {
-            mf = callingForm as FormLoop;
+            mf = callingForm as FormSim;
             InitializeComponent();
         }
 

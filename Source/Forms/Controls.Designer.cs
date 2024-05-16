@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace ModSim
 {
-    public partial class FormLoop
+    public partial class FormSim
     {
         private string TimeNow = "";
 

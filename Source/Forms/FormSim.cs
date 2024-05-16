@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ModSim
 {
-    public partial class FormLoop : Form
+    public partial class FormSim : Form
     {
         //timer variables
         public double secondsSinceStart, twoSecondTimer, tenSecondTimer, threeMinuteTimer;
@@ -37,13 +37,13 @@ namespace ModSim
         public string baseDirectory;
 
 
-        public FormLoop()
+        public FormSim()
         {
             InitializeComponent();
         }
 
         //First run
-        private void FormLoop_Load(object sender, EventArgs e)
+        private void FormSim_Load(object sender, EventArgs e)
         {
             if (Settings.Default.setF_workingDirectory == "Default")
                 baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\AgOpenGPS\\";
@@ -76,7 +76,7 @@ namespace ModSim
             longitude = -111.160047;
         }
 
-        private void FormLoop_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormSim_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Default.Save();
 
@@ -90,7 +90,7 @@ namespace ModSim
             }
         }
 
-        private void FormLoop_Resize(object sender, EventArgs e)
+        private void FormSim_Resize(object sender, EventArgs e)
         {
         }
 

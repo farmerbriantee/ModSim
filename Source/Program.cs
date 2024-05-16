@@ -42,7 +42,7 @@ namespace ModSim
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new FormLoop());
+                Application.Run(new FormSim());
             }
         }
     }

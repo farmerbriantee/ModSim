@@ -1,7 +1,7 @@
 ﻿
 namespace ModSim
 {
-    partial class FormLoop
+    partial class FormSim
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace ModSim
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoop));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSim));
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblCurentLon = new System.Windows.Forms.Label();
@@ -563,7 +563,7 @@ namespace ModSim
             this.simTimer.Enabled = true;
             this.simTimer.Tick += new System.EventHandler(this.simTimer_Tick);
             // 
-            // FormLoop
+            // FormSim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -599,12 +599,12 @@ namespace ModSim
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(50, 50);
-            this.Name = "FormLoop";
+            this.Name = "FormSim";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Text = "AgTwo";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoop_FormClosing);
-            this.Load += new System.EventHandler(this.FormLoop_Load);
-            this.Resize += new System.EventHandler(this.FormLoop_Resize);
+            this.Text = "Module Simulator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSim_FormClosing);
+            this.Load += new System.EventHandler(this.FormSim_Load);
+            this.Resize += new System.EventHandler(this.FormSim_Resize);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
