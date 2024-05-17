@@ -13,6 +13,68 @@ namespace ModSim
 {
     public partial class FormSim
     {
+        private void lblWAS_Click(object sender, EventArgs e)
+        {
+            tbarSteerAngleWAS.Value = 0;
+            steerAngle = 0;
+            lblWAS.Text = "Steer Angle: 0.0°";
+        }
+        private void lblKmh_Click(object sender, EventArgs e)
+        {
+            tbarSpeed.Value = 0;
+            lblKmh.Text = "Kmh: 0.0" ;
+            mSec.Text = "M/Sec: 0.0" ;
+        }
+
+        private void tbarSteerAngleWAS_Scroll(object sender, EventArgs e)
+        {
+            steerAngleActual = tbarSteerAngleWAS.Value * 0.01;
+            lblWAS.Text = "Steer Angle: " + (steerAngleActual).ToString("N2") + "°";
+        }
+
+        private void tbarSpeed_Scroll(object sender, EventArgs e)
+        {
+            if (tbarSpeed.Value < 0) lblKmh.BackColor = Color.Salmon;
+            else lblKmh.BackColor = Color.LightGreen;
+
+            lblKmh.Text = "Kmh: " + (tbarSpeed.Value * 0.1).ToString("N1");
+            mSec.Text = "M/Sec: " + (tbarSpeed.Value * 0.027777777777).ToString("N1");
+        }
+
+        private void btnSteerButtonRemote_Click(object sender, EventArgs e)
+        {
+            if (steerSwitch > 0) steerSwitch = 0;
+            else steerSwitch = 1;
+            btnSteerButtonRemote.BackColor = Color.Green;
+        }
+
+        private void cboxSteerSwitchRemote_Click(object sender, EventArgs e)
+        {
+            if (cboxSteerSwitchRemote.Checked) steerSwitch = 0;
+            else steerSwitch = 1;
+        }        
+        
+
+        private void cboxWorkSwitch_Click(object sender, EventArgs e)
+        {
+            if (cboxWorkSwitch.Checked) workSwitch = 0;
+            else workSwitch = 1;
+        }
+
+        public void TimedMessageBox(int timeout, string title, string message)
+        {
+            var form = new FormTimedMessage(timeout, title, message);
+            form.Show();
+        }
+
+        public void YesMessageBox(string s1)
+        {
+            var form = new FormYes(s1);
+            form.ShowDialog(this);
+        }
+        
+        #region GPS Simulator
+
         private string TimeNow = "";
 
         //Our two new nmea strings
@@ -395,59 +457,8 @@ namespace ModSim
             sbRMC.Append("\r\n");
         }
 
+#endregion
 
-        private void lblWAS_Click(object sender, EventArgs e)
-        {
-            tbarSteerAngleWAS.Value = 0;
-        }
-
-        private void tbarSteerAngleWAS_Scroll(object sender, EventArgs e)
-        {
-            steerAngleActual = tbarSteerAngleWAS.Value * 0.01;
-            lblWAS.Text = "Steer Angle: " + (steerAngleActual).ToString("N2") + "°";
-        }
-
-        private void tbarSpeed_Scroll(object sender, EventArgs e)
-        {
-            if (tbarSpeed.Value < 0) Kmh.BackColor = Color.Salmon;
-            else Kmh.BackColor = Color.LightGreen;
-
-            Kmh.Text = "Kmh: " + (tbarSpeed.Value * 0.1).ToString("N1");
-            mSec.Text = "M/Sec: " + (tbarSpeed.Value * 0.027777777777).ToString("N1");
-        }
-
-        private void tbarHeading_Scroll(object sender, EventArgs e)
-        {
-            //Heading.Text = "Heading: " + (headingTrue*ToDegrees).ToString() + "°";
-        }
-
-        private void btnRemoteAutoSteer_Click(object sender, EventArgs e)
-        {
-            if (steerSwitch > 0) steerSwitch = 0;
-            else steerSwitch = 1;
-        }
-
-        private void btnWorkSwitch_Click(object sender, EventArgs e)
-        {
-            if (workSwitch > 0) workSwitch = 0;
-            else workSwitch = 1;
-        }
-
-
-        public void TimedMessageBox(int timeout, string title, string message)
-        {
-            var form = new FormTimedMessage(timeout, title, message);
-            form.Show();
-        }
-
-        public void YesMessageBox(string s1)
-        {
-            var form = new FormYes(s1);
-            form.ShowDialog(this);
-        }
-
-        private ToolStripDropDownButton toolStripDropDownButton1;
-        private ToolStripMenuItem deviceManagerToolStripMenuItem;
     }
 }
 

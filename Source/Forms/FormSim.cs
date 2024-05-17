@@ -33,6 +33,7 @@ namespace ModSim
         public bool isAppInFocus = true, isLostFocus;
         public int focusSkipCounter = 121;
 
+
         //The base directory where Drive will be stored and fields and vehicles branch from
         public string baseDirectory;
 
@@ -49,31 +50,10 @@ namespace ModSim
                 baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\AgOpenGPS\\";
             else baseDirectory = Settings.Default.setF_workingDirectory + "\\AgOpenGPS\\";
 
-            if (Settings.Default.setUDP_isOn)
-            {
-                LoadUDPNetwork();
-            }
-            else
-            {
-                label2.Visible = false;
-                label3.Visible = false;
-                label4.Visible = false;
-                label9.Visible = false;
-
-                lblWASCounts.Visible = false;
-                lblSwitchStatus.Visible = false;
-                lblWorkSwitchStatus.Visible = false;
-
-                label10.Visible = false;
-                label12.Visible = false;
-                lbl1To8.Visible = false;
-                lbl9To16.Visible = false;
-
-                lblIP.Text = "Off";
-            }
-
             latitude = 53.4360564;
             longitude = -111.160047;
+
+            LoadUDPNetwork();
         }
 
         private void FormSim_FormClosing(object sender, FormClosingEventArgs e)
@@ -122,11 +102,6 @@ namespace ModSim
                     lblIP.Text += IPA.ToString() + "\r\n";
                 }
             }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

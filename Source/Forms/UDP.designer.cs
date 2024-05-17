@@ -187,7 +187,7 @@ namespace ModSim
         double gpsSpeed = 0;
 
         //steering variables
-        double steerAngleActual = 8.8;
+        double steerAngleActual = 0;
         double steerAngleSetPoint = 0; //the desired angle from AgOpen
         int steeringPosition = 0; //from steering sensor
         double steerAngleError = 0; //setpoint - actual
@@ -201,21 +201,6 @@ namespace ModSim
                 {
                     switch (data[3])
                     {
-                        case 126:
-                            {
-                                //traffic.helloFromAutoSteer = 0;
-                                if (isViewAdvanced)
-                                {
-                                    double actualSteerAngle = (Int16)((data[6] << 8) + data[5]);
-                                    lblWAS.Text = (actualSteerAngle * 0.01).ToString("N1");
-                                    lblWASCounts.Text = ((Int16)((data[8] << 8) + data[7])).ToString();
-
-                                    lblSwitchStatus.Text = ((data[9] & 2) == 2).ToString();
-                                    lblWorkSwitchStatus.Text = ((data[9] & 1) == 1).ToString();
-                                }
-                                break;
-                            }
-
                         case 254:
                             {
                                 gpsSpeed = ((double)(data[5] | data[6] << 8)) * 0.1;
@@ -224,6 +209,7 @@ namespace ModSim
 
                                 guidanceStatus = data[7];
                                 guidanceStatusChanged = (guidanceStatus != prevGuidanceStatus);
+                                lblGuidanceStatus.Text = guidanceStatus.ToString(); 
 
                                 //Bit 8,9    set point steer angle * 100 is sent
                                 steerAngleSetPoint = ((float)(data[8] | data[9] << 8)) * 0.01; //high low bytes
@@ -236,6 +222,9 @@ namespace ModSim
 
                                 //Bit 12
                                 relayHi = data[12];
+
+                                lbl1To8.Text = Convert.ToString(data[11], 2).PadLeft(8, '0');
+                                lbl9To16.Text = Convert.ToString(data[12], 2).PadLeft(8, '0');
 
                                 //----------------------------------------------------------------------------
                                 //Serial Send to agopenGPS
@@ -255,7 +244,7 @@ namespace ModSim
 
                                 switchByte = 0;
                                 switchByte |= ((int)remoteSwitch << 2); //put remote in bit 2
-                                switchByte |= (steerSwitch << 1);   //put steerswitch status in bit 1 position
+                                switchByte |= (steerSwitch << 1);   //put steerSwitch status in bit 1 position
                                 switchByte |= workSwitch;
 
                                 PGN_253[11] = (byte)switchByte;
@@ -270,6 +259,95 @@ namespace ModSim
 
                                 SendUDPMessage(PGN_253);
 
+                                if (steerSwitch == 0 && !cboxSteerSwitchRemote.Checked)
+                                {
+                                    steerSwitch = 1;
+                                    btnSteerButtonRemote.BackColor = Color.White;
+                                }
+
+                                break;
+                            }
+
+                        case 252:
+                            {
+                                //PID values
+                                steerSettings.Kp = data[5];   // read Kp from AgOpenGPS
+                                lblKp.Text = steerSettings.Kp.ToString();
+
+                                steerSettings.highPWM = data[6]; // read high pwm
+                                lblHighPWM.Text = steerSettings.highPWM.ToString();
+
+                                steerSettings.lowPWM = data[7];   // read lowPWM from AgOpenGPS              
+
+                                steerSettings.minPWM = data[8]; //read the minimum amount of PWM for instant on\
+                                lblMinPWM.Text = steerSettings.minPWM.ToString();
+
+                                float temp = steerSettings.minPWM;
+                                temp *= 1.2f;
+                                steerSettings.lowPWM  = (byte)temp;
+                                lblLowPWM.Text = steerSettings.lowPWM.ToString();
+
+                                steerSettings.steerSensorCounts = data[9]; //sent as setting displayed in AOG
+                                lblWAS_Counts.Text = steerSettings.steerSensorCounts.ToString();
+
+                                steerSettings.wasOffset = (data[10]);  //read was zero offset Lo
+
+                                steerSettings.wasOffset |= (data[11] << 8);  //read was zero offset Hi
+                                lblWAS_Offset.Text=steerSettings.wasOffset.ToString();
+
+                                steerSettings.AckermanFix = (float)data[12] * 0.01;
+                                lblAckerman.Text=(steerSettings.AckermanFix * 100).ToString("N0")+"%";
+
+                                break;                            
+                            }
+
+                        case 251:
+                            {
+                                int sett = data[5]; //setting0
+
+                                if ((sett & (1 << 0)) != 0) steerConfig.InvertWAS = 1; else steerConfig.InvertWAS = 0;
+                                lblInvertWAS.Text=steerConfig.InvertWAS.ToString();
+
+                                if ((sett & (1 << 1)) != 0) steerConfig.IsRelayActiveHigh = 1; else steerConfig.IsRelayActiveHigh = 0;
+                                lblRelayActHigh.Text = steerConfig.IsRelayActiveHigh.ToString();
+
+                                if ((sett & (1 << 2)) != 0) steerConfig.MotorDriveDirection = 1; else steerConfig.MotorDriveDirection = 0;
+                                lblMotorDirection.Text = steerConfig.MotorDriveDirection.ToString();
+
+                                if ((sett & (1 << 3)) != 0) steerConfig.SingleInputWAS = 1; else steerConfig.SingleInputWAS = 0;
+                                lblSingleInputWAS.Text=steerConfig.SingleInputWAS.ToString() ;
+
+                                if ((sett & (1 << 4)) != 0) steerConfig.CytronDriver = 1; else steerConfig.CytronDriver = 0;
+                                lblCytron.Text = steerConfig.CytronDriver.ToString();
+
+                                if ((sett & (1 << 5)) != 0) steerConfig.SteerSwitch = 1; else steerConfig.SteerSwitch = 0;
+                                lblSteerSw.Text = steerConfig.SteerSwitch.ToString();
+
+                                if ((sett & (1 << 6)) != 0) steerConfig.SteerButton = 1; else steerConfig.SteerButton = 0;
+                                lblSteerBtn.Text = steerConfig.SteerButton.ToString();
+
+                                if ((sett & (1 << 7)) != 0) steerConfig.ShaftEncoder = 1; else steerConfig.ShaftEncoder = 0;
+                                lblShaftEnc.Text = steerConfig.ShaftEncoder.ToString();
+
+                                steerConfig.PulseCountMax = data[6];
+                                lblPulseCounts.Text = steerConfig.PulseCountMax.ToString();                                
+
+                                //was speed
+                                //data[7]; 
+
+                                sett = data[8]; //setting1 - Danfoss valve etc
+
+                                if ((sett & (1 << 0)) != 0) steerConfig.IsDanfoss = 1; else steerConfig.IsDanfoss = 0;
+                                lblDanfoss.Text = steerConfig.IsDanfoss.ToString();
+
+                                if ((sett & (1 << 1)) != 0) steerConfig.PressureSensor = 1; else steerConfig.PressureSensor = 0;
+                                lblPressure.Text = steerConfig.PressureSensor.ToString();
+
+                                if ((sett & (1 << 2)) != 0) steerConfig.CurrentSensor = 1; else steerConfig.CurrentSensor = 0;
+                                lblCurrent.Text = steerConfig.CurrentSensor.ToString();
+
+                                if ((sett & (1 << 3)) != 0) steerConfig.IsUseY_Axis = 1; else steerConfig.IsUseY_Axis = 0;
+                                lblUseY_Axis.Text = steerConfig.IsUseY_Axis.ToString();
                                 break;
                             }
 
@@ -308,5 +386,35 @@ namespace ModSim
         }
 
         #endregion
+
+
+    }
+
+    public static class steerConfig
+    {            
+        public static byte InvertWAS = 0;
+        public static byte IsRelayActiveHigh = 0; //if zero, active low (default)
+        public static byte MotorDriveDirection = 0;
+        public static byte SingleInputWAS = 1;
+        public static byte CytronDriver = 1;
+        public static byte SteerSwitch = 0;  //1 if switch selected
+        public static byte SteerButton = 0;  //1 if button selected
+        public static byte ShaftEncoder = 0;
+        public static byte PressureSensor = 0;
+        public static byte CurrentSensor = 0;
+        public static byte PulseCountMax = 5;
+        public static byte IsDanfoss = 0;
+        public static byte IsUseY_Axis = 0;
+    }
+
+    public static class steerSettings
+    {
+        public static byte Kp = 120;  //proportional gain
+        public static byte lowPWM = 30;  //band of no action
+        public static int wasOffset = 0;
+        public static byte minPWM = 25;
+        public static byte highPWM = 160;//max PWM value
+        public static double steerSensorCounts = 30;
+        public static double AckermanFix = 1;     //sent as percent
     }
 }
