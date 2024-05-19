@@ -106,7 +106,7 @@ namespace ModSim
         public double speed = 0.6, headingTrue, stepDistance = 0.05, steerAngle;
         private double degrees, roll = 0;
 
-        private int rollIMU = 1, headingIMU = 0, pitchIMU = 0;
+        private int rollIMU = 0, headingIMU = 0, pitchIMU = 0;
 
         private const double ToRadians = 0.01745329251994329576923690768489, ToDegrees = 57.295779513082325225835265587528;
 
@@ -130,11 +130,15 @@ namespace ModSim
 
             headingIMU = (int)(degrees*10);
 
+            lblHeading.Text = (glm.toDegrees(headingTrue)).ToString("N2") + '°';
+
             CalculateNewPostionFromBearingDistance(ToRadians * latitude, ToRadians * longitude, headingTrue, stepDistance / 1000.0);
+
+            lblCurentLon.Text = longitude.ToString("N7");
+            lblCurrentLat.Text = latitude.ToString("N7");
 
             //calc the speed
             speed = Math.Round(1.944 * stepDistance * 1.0 / (0.1), 1);
-
 
             TimeNow = DateTime.UtcNow.ToString("HHmmss.fff,", CultureInfo.InvariantCulture);
 

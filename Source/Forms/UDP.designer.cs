@@ -176,7 +176,7 @@ namespace ModSim
         byte xte = 0;
 
         //Switches
-        int remoteSwitch = 0, workSwitch = 0, steerSwitch = 1, switchByte = 0;
+        int remoteSwitch = 1, workSwitch = 1, steerSwitch = 1, switchByte = 0;
 
         //On Off
         byte guidanceStatus = 0;
@@ -209,7 +209,14 @@ namespace ModSim
 
                                 guidanceStatus = data[7];
                                 guidanceStatusChanged = (guidanceStatus != prevGuidanceStatus);
-                                lblGuidanceStatus.Text = guidanceStatus.ToString(); 
+
+                                lblGuidanceStatus.Text = guidanceStatus.ToString();
+                                lblSteerSwitchStatus.Text = steerSwitch.ToString();
+
+                                //if (steerConfig.SteerButton == 1)
+                                //{
+                                //    if (guidanceStatus == 1) steerSwitch = 0;
+                                //}
 
                                 //Bit 8,9    set point steer angle * 100 is sent
                                 steerAngleSetPoint = ((float)(data[8] | data[9] << 8)) * 0.01; //high low bytes
@@ -236,7 +243,7 @@ namespace ModSim
 
                                 //heading         
                                 PGN_253[7] = unchecked((byte)((int)(9999)));
-                                PGN_253[8] = unchecked((byte)((int)(9999) >> 8)); 
+                                PGN_253[8] = unchecked((byte)((int)(9999) >> 8));
 
                                 //roll
                                 PGN_253[9] = unchecked((byte)((int)(8888)));
@@ -259,9 +266,8 @@ namespace ModSim
 
                                 SendUDPMessage(PGN_253);
 
-                                if (steerSwitch == 0 && !cboxSteerSwitchRemote.Checked)
+                                if (btnSteerButtonRemote.BackColor == Color.Green)
                                 {
-                                    steerSwitch = 1;
                                     btnSteerButtonRemote.BackColor = Color.White;
                                 }
 
@@ -284,7 +290,7 @@ namespace ModSim
 
                                 float temp = steerSettings.minPWM;
                                 temp *= 1.2f;
-                                steerSettings.lowPWM  = (byte)temp;
+                                steerSettings.lowPWM = (byte)temp;
                                 lblLowPWM.Text = steerSettings.lowPWM.ToString();
 
                                 steerSettings.steerSensorCounts = data[9]; //sent as setting displayed in AOG
@@ -293,12 +299,12 @@ namespace ModSim
                                 steerSettings.wasOffset = (data[10]);  //read was zero offset Lo
 
                                 steerSettings.wasOffset |= (data[11] << 8);  //read was zero offset Hi
-                                lblWAS_Offset.Text=steerSettings.wasOffset.ToString();
+                                lblWAS_Offset.Text = steerSettings.wasOffset.ToString();
 
                                 steerSettings.AckermanFix = (float)data[12] * 0.01;
-                                lblAckerman.Text=(steerSettings.AckermanFix * 100).ToString("N0")+"%";
+                                lblAckerman.Text = (steerSettings.AckermanFix * 100).ToString("N0") + "%";
 
-                                break;                            
+                                break;
                             }
 
                         case 251:
@@ -306,7 +312,7 @@ namespace ModSim
                                 int sett = data[5]; //setting0
 
                                 if ((sett & (1 << 0)) != 0) steerConfig.InvertWAS = 1; else steerConfig.InvertWAS = 0;
-                                lblInvertWAS.Text=steerConfig.InvertWAS.ToString();
+                                lblInvertWAS.Text = steerConfig.InvertWAS.ToString();
 
                                 if ((sett & (1 << 1)) != 0) steerConfig.IsRelayActiveHigh = 1; else steerConfig.IsRelayActiveHigh = 0;
                                 lblRelayActHigh.Text = steerConfig.IsRelayActiveHigh.ToString();
@@ -315,7 +321,7 @@ namespace ModSim
                                 lblMotorDirection.Text = steerConfig.MotorDriveDirection.ToString();
 
                                 if ((sett & (1 << 3)) != 0) steerConfig.SingleInputWAS = 1; else steerConfig.SingleInputWAS = 0;
-                                lblSingleInputWAS.Text=steerConfig.SingleInputWAS.ToString() ;
+                                lblSingleInputWAS.Text = steerConfig.SingleInputWAS.ToString();
 
                                 if ((sett & (1 << 4)) != 0) steerConfig.CytronDriver = 1; else steerConfig.CytronDriver = 0;
                                 lblCytron.Text = steerConfig.CytronDriver.ToString();
@@ -330,7 +336,7 @@ namespace ModSim
                                 lblShaftEnc.Text = steerConfig.ShaftEncoder.ToString();
 
                                 steerConfig.PulseCountMax = data[6];
-                                lblPulseCounts.Text = steerConfig.PulseCountMax.ToString();                                
+                                lblPulseCounts.Text = steerConfig.PulseCountMax.ToString();
 
                                 //was speed
                                 //data[7]; 
@@ -366,6 +372,53 @@ namespace ModSim
 
                                 break;
                             }
+
+                        case 201:
+                            {
+                                //make really sure this is the subnet pgn
+                                if (data[4] == 5 && data[5] == 201 && data[6] == 201)
+                                {
+                                    lblIPSet1.Text = data[7].ToString();
+                                    lblIPSet2.Text = data[8].ToString();
+                                    lblIPSet3.Text = data[9].ToString();
+
+                                    TimedMessageBox(2000, "IP Set", "New Values Changed");
+                                }
+
+                                break;
+                            }
+
+                        //scan reply
+                        case 202:
+                            {
+                                //make really sure this is the reply pgn
+                                if (data[4] == 3 && data[5] == 202 && data[6] == 202)
+                                {
+                                    byte [] scanReply = { 128, 129, 126, 203, 7,
+                                        Properties.Settings.Default.etIP_SubnetOne,
+                                        Properties.Settings.Default.etIP_SubnetTwo,
+                                        Properties.Settings.Default.etIP_SubnetThree, 126,
+
+                                        //source ips
+
+                                        Properties.Settings.Default.etIP_SubnetOne,
+                                        Properties.Settings.Default.etIP_SubnetTwo,
+                                        Properties.Settings.Default.etIP_SubnetThree, 23 };
+
+                                    //checksum
+                                    int CK_A = 0;
+                                    for (int i = 2; i < scanReply.Length - 1; i++)
+                                    {
+                                        CK_A = (CK_A + scanReply[i]);
+                                    }
+                                    scanReply[scanReply.Length - 1] = unchecked((byte)((int)(CK_A))); 
+
+                                    SendUDPMessage(scanReply);
+                                }
+                                break;
+                            }
+
+
 
                         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

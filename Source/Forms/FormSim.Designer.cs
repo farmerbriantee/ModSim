@@ -43,6 +43,8 @@ namespace ModSim
             this.label12 = new System.Windows.Forms.Label();
             this.btnSteerButtonRemote = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSteerSwitchStatus = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.lblAckerman = new System.Windows.Forms.Label();
             this.cboxWorkSwitch = new System.Windows.Forms.CheckBox();
             this.lblWAS_Offset = new System.Windows.Forms.Label();
@@ -90,9 +92,8 @@ namespace ModSim
             this.cboxNDA = new System.Windows.Forms.CheckBox();
             this.lblWAS = new System.Windows.Forms.Label();
             this.tbarSteerAngleWAS = new System.Windows.Forms.TrackBar();
-            this.Heading = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.cboxOGI = new System.Windows.Forms.CheckBox();
-            this.cboxRMC = new System.Windows.Forms.CheckBox();
             this.cboxGGA = new System.Windows.Forms.CheckBox();
             this.lblKmh = new System.Windows.Forms.Label();
             this.mSec = new System.Windows.Forms.Label();
@@ -101,19 +102,26 @@ namespace ModSim
             this.cboxVTG = new System.Windows.Forms.CheckBox();
             this.tbarSpeed = new System.Windows.Forms.TrackBar();
             this.simTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblHeading = new System.Windows.Forms.Label();
+            this.cboxRMC = new System.Windows.Forms.CheckBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblIPSet1 = new System.Windows.Forms.Label();
+            this.lblIPSet2 = new System.Windows.Forms.Label();
+            this.lblIPSet3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSteerAngleWAS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(567, 350);
+            this.label6.Location = new System.Drawing.Point(3, 2);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 16);
@@ -122,12 +130,11 @@ namespace ModSim
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(564, 375);
+            this.label8.Location = new System.Drawing.Point(0, 25);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 16);
@@ -136,12 +143,11 @@ namespace ModSim
             // 
             // lblCurentLon
             // 
-            this.lblCurentLon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurentLon.AutoSize = true;
             this.lblCurentLon.BackColor = System.Drawing.Color.Transparent;
             this.lblCurentLon.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurentLon.ForeColor = System.Drawing.Color.Black;
-            this.lblCurentLon.Location = new System.Drawing.Point(591, 374);
+            this.lblCurentLon.Location = new System.Drawing.Point(27, 24);
             this.lblCurentLon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurentLon.Name = "lblCurentLon";
             this.lblCurentLon.Size = new System.Drawing.Size(119, 18);
@@ -150,12 +156,11 @@ namespace ModSim
             // 
             // lblCurrentLat
             // 
-            this.lblCurrentLat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentLat.AutoSize = true;
             this.lblCurrentLat.BackColor = System.Drawing.Color.Transparent;
             this.lblCurrentLat.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentLat.ForeColor = System.Drawing.Color.Black;
-            this.lblCurrentLat.Location = new System.Drawing.Point(591, 349);
+            this.lblCurrentLat.Location = new System.Drawing.Point(27, 1);
             this.lblCurrentLat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentLat.Name = "lblCurrentLat";
             this.lblCurrentLat.Size = new System.Drawing.Size(109, 18);
@@ -168,7 +173,7 @@ namespace ModSim
             this.lblIP.BackColor = System.Drawing.Color.Transparent;
             this.lblIP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIP.ForeColor = System.Drawing.Color.Black;
-            this.lblIP.Location = new System.Drawing.Point(8, 4);
+            this.lblIP.Location = new System.Drawing.Point(5, 79);
             this.lblIP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIP.Name = "lblIP";
             this.lblIP.Size = new System.Drawing.Size(115, 16);
@@ -183,12 +188,12 @@ namespace ModSim
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(55, 94);
+            this.label2.Location = new System.Drawing.Point(9, 114);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 19);
+            this.label2.Size = new System.Drawing.Size(97, 19);
             this.label2.TabIndex = 481;
-            this.label2.Text = "Status:";
+            this.label2.Text = "AOG Status:";
             // 
             // lbl1To8
             // 
@@ -196,7 +201,7 @@ namespace ModSim
             this.lbl1To8.BackColor = System.Drawing.Color.Transparent;
             this.lbl1To8.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1To8.ForeColor = System.Drawing.Color.Black;
-            this.lbl1To8.Location = new System.Drawing.Point(13, 112);
+            this.lbl1To8.Location = new System.Drawing.Point(8, 217);
             this.lbl1To8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1To8.Name = "lbl1To8";
             this.lbl1To8.Size = new System.Drawing.Size(106, 23);
@@ -209,7 +214,7 @@ namespace ModSim
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(13, 92);
+            this.label10.Location = new System.Drawing.Point(8, 197);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 19);
@@ -222,7 +227,7 @@ namespace ModSim
             this.lbl9To16.BackColor = System.Drawing.Color.Transparent;
             this.lbl9To16.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl9To16.ForeColor = System.Drawing.Color.Black;
-            this.lbl9To16.Location = new System.Drawing.Point(13, 164);
+            this.lbl9To16.Location = new System.Drawing.Point(8, 269);
             this.lbl9To16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl9To16.Name = "lbl9To16";
             this.lbl9To16.Size = new System.Drawing.Size(106, 23);
@@ -235,7 +240,7 @@ namespace ModSim
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(13, 143);
+            this.label12.Location = new System.Drawing.Point(8, 248);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(105, 19);
@@ -254,6 +259,8 @@ namespace ModSim
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblSteerSwitchStatus);
+            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.lblAckerman);
             this.groupBox1.Controls.Add(this.cboxWorkSwitch);
             this.groupBox1.Controls.Add(this.lblWAS_Offset);
@@ -299,12 +306,38 @@ namespace ModSim
             this.groupBox1.Controls.Add(this.lblSingleInputWAS);
             this.groupBox1.Controls.Add(this.lblRelayActHigh);
             this.groupBox1.Controls.Add(this.lblMotorDirection);
-            this.groupBox1.Location = new System.Drawing.Point(170, 4);
+            this.groupBox1.Location = new System.Drawing.Point(153, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(314, 398);
             this.groupBox1.TabIndex = 516;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Steer Module";
+            // 
+            // lblSteerSwitchStatus
+            // 
+            this.lblSteerSwitchStatus.AutoSize = true;
+            this.lblSteerSwitchStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblSteerSwitchStatus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSteerSwitchStatus.ForeColor = System.Drawing.Color.Black;
+            this.lblSteerSwitchStatus.Location = new System.Drawing.Point(102, 95);
+            this.lblSteerSwitchStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSteerSwitchStatus.Name = "lblSteerSwitchStatus";
+            this.lblSteerSwitchStatus.Size = new System.Drawing.Size(19, 19);
+            this.lblSteerSwitchStatus.TabIndex = 558;
+            this.lblSteerSwitchStatus.Text = "0";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(4, 95);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(102, 19);
+            this.label20.TabIndex = 557;
+            this.label20.Text = "Steer Switch:";
             // 
             // lblAckerman
             // 
@@ -381,7 +414,7 @@ namespace ModSim
             this.lblGuidanceStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblGuidanceStatus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGuidanceStatus.ForeColor = System.Drawing.Color.Black;
-            this.lblGuidanceStatus.Location = new System.Drawing.Point(109, 95);
+            this.lblGuidanceStatus.Location = new System.Drawing.Point(102, 115);
             this.lblGuidanceStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGuidanceStatus.Name = "lblGuidanceStatus";
             this.lblGuidanceStatus.Size = new System.Drawing.Size(19, 19);
@@ -873,7 +906,7 @@ namespace ModSim
             // 
             this.cboxKSXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxKSXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxKSXT.Location = new System.Drawing.Point(651, 305);
+            this.cboxKSXT.Location = new System.Drawing.Point(648, 336);
             this.cboxKSXT.Name = "cboxKSXT";
             this.cboxKSXT.Size = new System.Drawing.Size(80, 24);
             this.cboxKSXT.TabIndex = 537;
@@ -886,7 +919,7 @@ namespace ModSim
             this.cboxNDA.Checked = true;
             this.cboxNDA.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cboxNDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxNDA.Location = new System.Drawing.Point(549, 305);
+            this.cboxNDA.Location = new System.Drawing.Point(543, 364);
             this.cboxNDA.Name = "cboxNDA";
             this.cboxNDA.Size = new System.Drawing.Size(69, 24);
             this.cboxNDA.TabIndex = 536;
@@ -898,10 +931,10 @@ namespace ModSim
             this.lblWAS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWAS.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.lblWAS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWAS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWAS.Location = new System.Drawing.Point(513, 21);
+            this.lblWAS.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWAS.Location = new System.Drawing.Point(545, 30);
             this.lblWAS.Name = "lblWAS";
-            this.lblWAS.Size = new System.Drawing.Size(206, 26);
+            this.lblWAS.Size = new System.Drawing.Size(133, 21);
             this.lblWAS.TabIndex = 535;
             this.lblWAS.Text = "Steer Angle: 0°";
             this.lblWAS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -911,53 +944,43 @@ namespace ModSim
             // 
             this.tbarSteerAngleWAS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbarSteerAngleWAS.LargeChange = 1;
-            this.tbarSteerAngleWAS.Location = new System.Drawing.Point(502, 56);
+            this.tbarSteerAngleWAS.Location = new System.Drawing.Point(508, 61);
             this.tbarSteerAngleWAS.Maximum = 6000;
             this.tbarSteerAngleWAS.Minimum = -6000;
             this.tbarSteerAngleWAS.Name = "tbarSteerAngleWAS";
-            this.tbarSteerAngleWAS.Size = new System.Drawing.Size(229, 45);
+            this.tbarSteerAngleWAS.Size = new System.Drawing.Size(206, 45);
             this.tbarSteerAngleWAS.TabIndex = 534;
             this.tbarSteerAngleWAS.TickFrequency = 100;
             this.tbarSteerAngleWAS.Scroll += new System.EventHandler(this.tbarSteerAngleWAS_Scroll);
             // 
-            // Heading
+            // label30
             // 
-            this.Heading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Heading.Location = new System.Drawing.Point(553, 99);
-            this.Heading.Name = "Heading";
-            this.Heading.Size = new System.Drawing.Size(127, 20);
-            this.Heading.TabIndex = 524;
-            this.Heading.Text = "Heading: 112°";
-            this.Heading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(568, 2);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(73, 19);
+            this.label30.TabIndex = 524;
+            this.label30.Text = "Heading:";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cboxOGI
             // 
             this.cboxOGI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxOGI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxOGI.Location = new System.Drawing.Point(549, 277);
+            this.cboxOGI.Location = new System.Drawing.Point(648, 362);
             this.cboxOGI.Name = "cboxOGI";
             this.cboxOGI.Size = new System.Drawing.Size(69, 24);
             this.cboxOGI.TabIndex = 532;
             this.cboxOGI.Text = "OGI";
             this.cboxOGI.UseVisualStyleBackColor = true;
             // 
-            // cboxRMC
-            // 
-            this.cboxRMC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboxRMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxRMC.Location = new System.Drawing.Point(651, 276);
-            this.cboxRMC.Name = "cboxRMC";
-            this.cboxRMC.Size = new System.Drawing.Size(69, 24);
-            this.cboxRMC.TabIndex = 531;
-            this.cboxRMC.Text = "RMC";
-            this.cboxRMC.UseVisualStyleBackColor = true;
-            // 
             // cboxGGA
             // 
             this.cboxGGA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxGGA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxGGA.Location = new System.Drawing.Point(549, 218);
+            this.cboxGGA.Location = new System.Drawing.Point(543, 284);
             this.cboxGGA.Name = "cboxGGA";
             this.cboxGGA.Size = new System.Drawing.Size(69, 24);
             this.cboxGGA.TabIndex = 530;
@@ -967,14 +990,15 @@ namespace ModSim
             // lblKmh
             // 
             this.lblKmh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblKmh.AutoSize = true;
             this.lblKmh.BackColor = System.Drawing.Color.White;
-            this.lblKmh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKmh.Location = new System.Drawing.Point(510, 141);
+            this.lblKmh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblKmh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKmh.Location = new System.Drawing.Point(508, 121);
             this.lblKmh.Name = "lblKmh";
-            this.lblKmh.Size = new System.Drawing.Size(79, 20);
+            this.lblKmh.Size = new System.Drawing.Size(104, 24);
             this.lblKmh.TabIndex = 529;
             this.lblKmh.Text = "Kmh: 0.0";
+            this.lblKmh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblKmh.Click += new System.EventHandler(this.lblKmh_Click);
             // 
             // mSec
@@ -982,7 +1006,7 @@ namespace ModSim
             this.mSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mSec.AutoSize = true;
             this.mSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mSec.Location = new System.Drawing.Point(632, 143);
+            this.mSec.Location = new System.Drawing.Point(630, 127);
             this.mSec.Name = "mSec";
             this.mSec.Size = new System.Drawing.Size(79, 16);
             this.mSec.TabIndex = 528;
@@ -992,7 +1016,7 @@ namespace ModSim
             // 
             this.cboxHDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxHDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxHDT.Location = new System.Drawing.Point(651, 247);
+            this.cboxHDT.Location = new System.Drawing.Point(648, 310);
             this.cboxHDT.Name = "cboxHDT";
             this.cboxHDT.Size = new System.Drawing.Size(69, 24);
             this.cboxHDT.TabIndex = 527;
@@ -1003,7 +1027,7 @@ namespace ModSim
             // 
             this.cboxAVR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxAVR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxAVR.Location = new System.Drawing.Point(651, 218);
+            this.cboxAVR.Location = new System.Drawing.Point(648, 284);
             this.cboxAVR.Name = "cboxAVR";
             this.cboxAVR.Size = new System.Drawing.Size(69, 24);
             this.cboxAVR.TabIndex = 526;
@@ -1014,7 +1038,7 @@ namespace ModSim
             // 
             this.cboxVTG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboxVTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxVTG.Location = new System.Drawing.Point(549, 247);
+            this.cboxVTG.Location = new System.Drawing.Point(543, 310);
             this.cboxVTG.Name = "cboxVTG";
             this.cboxVTG.Size = new System.Drawing.Size(69, 24);
             this.cboxVTG.TabIndex = 525;
@@ -1025,11 +1049,11 @@ namespace ModSim
             // 
             this.tbarSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbarSpeed.LargeChange = 10;
-            this.tbarSpeed.Location = new System.Drawing.Point(503, 168);
+            this.tbarSpeed.Location = new System.Drawing.Point(508, 152);
             this.tbarSpeed.Maximum = 500;
             this.tbarSpeed.Minimum = -200;
             this.tbarSpeed.Name = "tbarSpeed";
-            this.tbarSpeed.Size = new System.Drawing.Size(229, 45);
+            this.tbarSpeed.Size = new System.Drawing.Size(206, 45);
             this.tbarSpeed.TabIndex = 519;
             this.tbarSpeed.TickFrequency = 50;
             this.tbarSpeed.Scroll += new System.EventHandler(this.tbarSpeed_Scroll);
@@ -1039,13 +1063,104 @@ namespace ModSim
             this.simTimer.Enabled = true;
             this.simTimer.Tick += new System.EventHandler(this.simTimer_Tick);
             // 
+            // lblHeading
+            // 
+            this.lblHeading.AutoSize = true;
+            this.lblHeading.BackColor = System.Drawing.Color.Transparent;
+            this.lblHeading.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeading.ForeColor = System.Drawing.Color.Black;
+            this.lblHeading.Location = new System.Drawing.Point(640, 2);
+            this.lblHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeading.Name = "lblHeading";
+            this.lblHeading.Size = new System.Drawing.Size(19, 19);
+            this.lblHeading.TabIndex = 557;
+            this.lblHeading.Text = "0";
+            // 
+            // cboxRMC
+            // 
+            this.cboxRMC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboxRMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxRMC.Location = new System.Drawing.Point(543, 336);
+            this.cboxRMC.Name = "cboxRMC";
+            this.cboxRMC.Size = new System.Drawing.Size(69, 24);
+            this.cboxRMC.TabIndex = 531;
+            this.cboxRMC.Text = "RMC";
+            this.cboxRMC.UseVisualStyleBackColor = true;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar1.LargeChange = 10;
+            this.trackBar1.Location = new System.Drawing.Point(508, 238);
+            this.trackBar1.Maximum = 200;
+            this.trackBar1.Minimum = -200;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(206, 45);
+            this.trackBar1.TabIndex = 558;
+            this.trackBar1.TickFrequency = 50;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(545, 209);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(133, 21);
+            this.label17.TabIndex = 559;
+            this.label17.Text = "Roll: 0°";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblIPSet1
+            // 
+            this.lblIPSet1.BackColor = System.Drawing.Color.Transparent;
+            this.lblIPSet1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPSet1.ForeColor = System.Drawing.Color.Black;
+            this.lblIPSet1.Location = new System.Drawing.Point(4, 50);
+            this.lblIPSet1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIPSet1.Name = "lblIPSet1";
+            this.lblIPSet1.Size = new System.Drawing.Size(40, 19);
+            this.lblIPSet1.TabIndex = 557;
+            this.lblIPSet1.Text = "255";
+            // 
+            // lblIPSet2
+            // 
+            this.lblIPSet2.BackColor = System.Drawing.Color.Transparent;
+            this.lblIPSet2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPSet2.ForeColor = System.Drawing.Color.Black;
+            this.lblIPSet2.Location = new System.Drawing.Point(47, 50);
+            this.lblIPSet2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIPSet2.Name = "lblIPSet2";
+            this.lblIPSet2.Size = new System.Drawing.Size(40, 19);
+            this.lblIPSet2.TabIndex = 557;
+            this.lblIPSet2.Text = "255";
+            // 
+            // lblIPSet3
+            // 
+            this.lblIPSet3.BackColor = System.Drawing.Color.Transparent;
+            this.lblIPSet3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPSet3.ForeColor = System.Drawing.Color.Black;
+            this.lblIPSet3.Location = new System.Drawing.Point(90, 50);
+            this.lblIPSet3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIPSet3.Name = "lblIPSet3";
+            this.lblIPSet3.Size = new System.Drawing.Size(40, 19);
+            this.lblIPSet3.TabIndex = 557;
+            this.lblIPSet3.Text = "255";
+            // 
             // FormSim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(743, 416);
+            this.ClientSize = new System.Drawing.Size(741, 399);
+            this.Controls.Add(this.lblIPSet3);
+            this.Controls.Add(this.lblIPSet2);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.lblIPSet1);
+            this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl1To8);
@@ -1054,7 +1169,7 @@ namespace ModSim
             this.Controls.Add(this.cboxNDA);
             this.Controls.Add(this.lblWAS);
             this.Controls.Add(this.tbarSteerAngleWAS);
-            this.Controls.Add(this.Heading);
+            this.Controls.Add(this.label30);
             this.Controls.Add(this.cboxOGI);
             this.Controls.Add(this.cboxRMC);
             this.Controls.Add(this.cboxGGA);
@@ -1086,6 +1201,7 @@ namespace ModSim
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSteerAngleWAS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,9 +1224,8 @@ namespace ModSim
         private System.Windows.Forms.CheckBox cboxNDA;
         private System.Windows.Forms.Label lblWAS;
         private System.Windows.Forms.TrackBar tbarSteerAngleWAS;
-        private System.Windows.Forms.Label Heading;
+        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.CheckBox cboxOGI;
-        private System.Windows.Forms.CheckBox cboxRMC;
         private System.Windows.Forms.CheckBox cboxGGA;
         private System.Windows.Forms.Label lblKmh;
         private System.Windows.Forms.Label mSec;
@@ -1162,6 +1277,15 @@ namespace ModSim
         private System.Windows.Forms.Label lblAckerman;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblPulseCounts;
+        private System.Windows.Forms.Label lblHeading;
+        private System.Windows.Forms.CheckBox cboxRMC;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblSteerSwitchStatus;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblIPSet1;
+        private System.Windows.Forms.Label lblIPSet2;
+        private System.Windows.Forms.Label lblIPSet3;
     }
 }
 
