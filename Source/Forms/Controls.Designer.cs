@@ -13,11 +13,20 @@ namespace ModSim
 {
     public partial class FormSim
     {
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.setGPS_SimLatitude = (double)nudLat.Value;
+            Properties.Settings.Default.setGPS_SimLongitude = (double)nudLon.Value;
+            Properties.Settings.Default.Save();
+            latitude = Properties.Settings.Default.setGPS_SimLatitude;
+            longitude = Properties.Settings.Default.setGPS_SimLongitude;
+        }
+
         private void lblWAS_Click(object sender, EventArgs e)
         {
             tbarSteerAngleWAS.Value = 0;
             steerAngle = 0;
-            lblWAS.Text = "Steer Angle: 0.0°";
+            lblWAS.Text = "Steer: 0.0°";
         }
         private void lblKmh_Click(object sender, EventArgs e)
         {
@@ -29,7 +38,7 @@ namespace ModSim
         private void tbarSteerAngleWAS_Scroll(object sender, EventArgs e)
         {
             steerAngleActual = tbarSteerAngleWAS.Value * 0.01;
-            lblWAS.Text = "Steer Angle: " + (steerAngleActual).ToString("N2") + "°";
+            lblWAS.Text = "Steer: " + (steerAngleActual).ToString("N2") + "°";
         }
 
         private void tbarSpeed_Scroll(object sender, EventArgs e)
@@ -41,7 +50,20 @@ namespace ModSim
             mSec.Text = "M/Sec: " + (tbarSpeed.Value * 0.027777777777).ToString("N1");
         }
 
-        private void btnSteerButtonRemote_Click(object sender, EventArgs e)
+        private void tbarRoll_Scroll(object sender, EventArgs e)
+        {
+            roll = (double)tbarRoll.Value * 0.1;
+            rollIMU = (int)(roll*10);
+            lblRoll.Text = "Roll: " + (roll).ToString("N2") + "°";
+        }
+         private void lblRoll_Click(object sender, EventArgs e)
+        {
+            roll = 0;
+            rollIMU = 0;
+            lblRoll.Text = "Roll: 0°";
+            tbarRoll.Value = 0;
+        }
+       private void btnSteerButtonRemote_Click(object sender, EventArgs e)
         {
             if (steerSwitch > 0) steerSwitch = 0;
             else steerSwitch = 1;
@@ -117,7 +139,15 @@ namespace ModSim
         {
             stepDistance = tbarSpeed.Value * 0.027777777777 * (0.1);
 
-            steerAngle = tbarSteerAngleWAS.Value * 0.01;
+            if (guidanceStatus == 0)
+                steerAngle = tbarSteerAngleWAS.Value * 0.01;
+            else
+            {
+                steerAngle = steerAngleSetPoint;
+                tbarSteerAngleWAS.Value = (int)(steerAngleSetPoint);
+                steerAngleActual = steerAngle;
+                lblWAS.Text = "Steer: " + (steerAngleActual).ToString("N2") + "°";
+            }
 
             double temp = (stepDistance * Math.Tan(steerAngle * 0.02) / 2.5);
             headingTrue += temp;
@@ -125,7 +155,6 @@ namespace ModSim
             if (headingTrue > (2.0 * Math.PI)) headingTrue -= (2.0 * Math.PI);
             if (headingTrue < 0) headingTrue += (2.0 * Math.PI);
 
-            //Calculate the next Lat Long based on heading and distance
             degrees = ToDegrees * headingTrue;
 
             headingIMU = (int)(degrees*10);
@@ -134,7 +163,7 @@ namespace ModSim
 
             CalculateNewPostionFromBearingDistance(ToRadians * latitude, ToRadians * longitude, headingTrue, stepDistance / 1000.0);
 
-            lblCurentLon.Text = longitude.ToString("N7");
+            lblCurrentLon.Text = longitude.ToString("N7");
             lblCurrentLat.Text = latitude.ToString("N7");
 
             //calc the speed

@@ -7,7 +7,7 @@ namespace ModSim
 {
     internal static class Program
     {
-        private static readonly Mutex Mutex = new Mutex(true, "{8F6F0AC4-B9A1-55fd-A8CF-72F04E6BDE82}");
+        private static readonly Mutex Mutex = new Mutex(true, "{8F6F0AC4-B9A1-66fd-A8CF-72F04E6BDE82}");
 
         /// <summary>
         /// The main entry point for the application.
@@ -15,28 +15,6 @@ namespace ModSim
         [STAThread]
         private static void Main()
         {
-            ////opening the subkey
-            RegistryKey regKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\AgOpenGPS");
-
-            ////create default keys if not existing
-            if (regKey == null)
-            {
-                RegistryKey Key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\AgOpenGPS");
-
-                //storing the values
-                Key.SetValue("Language", "en");
-                Key.Close();
-
-                Properties.Settings.Default.setF_culture = "en";
-                Properties.Settings.Default.Save();
-            }
-            else
-            {
-                Properties.Settings.Default.setF_culture = regKey.GetValue("Language").ToString();
-                Properties.Settings.Default.Save();
-                regKey.Close();
-            }
-
             if (Mutex.WaitOne(TimeSpan.Zero, true))
             {
 

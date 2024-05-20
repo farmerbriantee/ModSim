@@ -25,55 +25,7 @@ namespace ModSim.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool setUDP_isOn {
-            get {
-                return ((bool)(this["setUDP_isOn"]));
-            }
-            set {
-                this["setUDP_isOn"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("29999")]
-        public int setIP_thisPort {
-            get {
-                return ((int)(this["setIP_thisPort"]));
-            }
-            set {
-                this["setIP_thisPort"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("28888")]
-        public int setIP_autoSteerPort {
-            get {
-                return ((int)(this["setIP_autoSteerPort"]));
-            }
-            set {
-                this["setIP_autoSteerPort"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool setPgm_isFirstRun {
-            get {
-                return ((bool)(this["setPgm_isFirstRun"]));
-            }
-            set {
-                this["setPgm_isFirstRun"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("53.4360564")]
         public double setPgm_defaultLat {
             get {
                 return ((double)(this["setPgm_defaultLat"]));
@@ -85,7 +37,7 @@ namespace ModSim.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-111.160047")]
         public double setPgm_defaultLon {
             get {
                 return ((double)(this["setPgm_defaultLon"]));
@@ -97,31 +49,7 @@ namespace ModSim.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en")]
-        public string setF_culture {
-            get {
-                return ((string)(this["setF_culture"]));
-            }
-            set {
-                this["setF_culture"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Default")]
-        public string setF_workingDirectory {
-            get {
-                return ((string)(this["setF_workingDirectory"]));
-            }
-            set {
-                this["setF_workingDirectory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("53.4360564")]
         public double setGPS_SimLatitude {
             get {
                 return ((double)(this["setGPS_SimLatitude"]));
@@ -133,7 +61,7 @@ namespace ModSim.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-111.160047")]
         public double setGPS_SimLongitude {
             get {
                 return ((double)(this["setGPS_SimLongitude"]));
@@ -152,66 +80,6 @@ namespace ModSim.Properties {
             }
             set {
                 this["setComm_commName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool setUDP_isSendNMEAToUDP {
-            get {
-                return ((bool)(this["setUDP_isSendNMEAToUDP"]));
-            }
-            set {
-                this["setUDP_isSendNMEAToUDP"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool setUDP_isUsePluginApp {
-            get {
-                return ((bool)(this["setUDP_isUsePluginApp"]));
-            }
-            set {
-                this["setUDP_isUsePluginApp"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool setMod_isNavConnected {
-            get {
-                return ((bool)(this["setMod_isNavConnected"]));
-            }
-            set {
-                this["setMod_isNavConnected"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool setMod_isMachineConnected {
-            get {
-                return ((bool)(this["setMod_isMachineConnected"]));
-            }
-            set {
-                this["setMod_isMachineConnected"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool setMod_isSteerConnected {
-            get {
-                return ((bool)(this["setMod_isSteerConnected"]));
-            }
-            set {
-                this["setMod_isSteerConnected"] = value;
             }
         }
         
@@ -253,54 +121,6 @@ namespace ModSim.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("127")]
-        public byte eth_loopOne {
-            get {
-                return ((byte)(this["eth_loopOne"]));
-            }
-            set {
-                this["eth_loopOne"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255")]
-        public byte eth_loopTwo {
-            get {
-                return ((byte)(this["eth_loopTwo"]));
-            }
-            set {
-                this["eth_loopTwo"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255")]
-        public byte eth_loopThree {
-            get {
-                return ((byte)(this["eth_loopThree"]));
-            }
-            set {
-                this["eth_loopThree"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255")]
-        public byte eth_loopFour {
-            get {
-                return ((byte)(this["eth_loopFour"]));
-            }
-            set {
-                this["eth_loopFour"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Setting {
             get {
@@ -308,6 +128,102 @@ namespace ModSim.Properties {
             }
             set {
                 this["Setting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool isGGA {
+            get {
+                return ((bool)(this["isGGA"]));
+            }
+            set {
+                this["isGGA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool isVTG {
+            get {
+                return ((bool)(this["isVTG"]));
+            }
+            set {
+                this["isVTG"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isRMC {
+            get {
+                return ((bool)(this["isRMC"]));
+            }
+            set {
+                this["isRMC"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isNDA {
+            get {
+                return ((bool)(this["isNDA"]));
+            }
+            set {
+                this["isNDA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isAVR {
+            get {
+                return ((bool)(this["isAVR"]));
+            }
+            set {
+                this["isAVR"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isHDT {
+            get {
+                return ((bool)(this["isHDT"]));
+            }
+            set {
+                this["isHDT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isKSXT {
+            get {
+                return ((bool)(this["isKSXT"]));
+            }
+            set {
+                this["isKSXT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isOGI {
+            get {
+                return ((bool)(this["isOGI"]));
+            }
+            set {
+                this["isOGI"] = value;
             }
         }
     }

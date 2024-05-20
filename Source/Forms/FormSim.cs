@@ -13,31 +13,6 @@ namespace ModSim
 {
     public partial class FormSim : Form
     {
-        //timer variables
-        public double secondsSinceStart, twoSecondTimer, tenSecondTimer, threeMinuteTimer;
-
-        public string lastSentence;
-
-        public bool isPluginUsed;
-
-        //usually 256 - send ntrip to serial in chunks
-        public int packetSizeNTRIP;
-
-        public bool lastHelloGPS, lastHelloAutoSteer, lastHelloMachine, lastHelloNav;
-        public bool isConnectedNav, isConnectedSteer, isConnectedMachine;
-
-        //is the fly out displayed
-        public bool isViewAdvanced = false;
-
-        //used to hide the window and not update text fields and most counters
-        public bool isAppInFocus = true, isLostFocus;
-        public int focusSkipCounter = 121;
-
-
-        //The base directory where Drive will be stored and fields and vehicles branch from
-        public string baseDirectory;
-
-
         public FormSim()
         {
             InitializeComponent();
@@ -46,18 +21,35 @@ namespace ModSim
         //First run
         private void FormSim_Load(object sender, EventArgs e)
         {
-            if (Settings.Default.setF_workingDirectory == "Default")
-                baseDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\AgOpenGPS\\";
-            else baseDirectory = Settings.Default.setF_workingDirectory + "\\AgOpenGPS\\";
+            cboxGGA.Checked = Settings.Default.isGGA;
+            cboxVTG.Checked = Settings.Default.isVTG;
+            cboxAVR.Checked = Settings.Default.isAVR;
+            cboxHDT.Checked = Settings.Default.isHDT;
+            cboxRMC.Checked = Settings.Default.isRMC;
+            cboxOGI.Checked = Settings.Default.isOGI;
+            cboxNDA.Checked = Settings.Default.isNDA;
+            cboxKSXT.Checked = Settings.Default.isKSXT;
 
-            latitude = 53.4360564;
-            longitude = -111.160047;
+            latitude = Settings.Default.setGPS_SimLatitude;
+            nudLat.Value = (decimal)Settings.Default.setGPS_SimLatitude;
+            longitude = Settings.Default.setGPS_SimLongitude;
+            nudLon.Value = (decimal)Settings.Default.setGPS_SimLongitude;
 
             LoadUDPNetwork();
         }
 
         private void FormSim_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //save settings before exit
+            Settings.Default.isGGA = cboxGGA.Checked;
+            Settings.Default.isVTG = cboxVTG.Checked;
+            Settings.Default.isAVR = cboxAVR.Checked;
+            Settings.Default.isHDT = cboxHDT.Checked;
+            Settings.Default.isRMC = cboxRMC.Checked;
+            Settings.Default.isOGI = cboxOGI.Checked;
+            Settings.Default.isNDA = cboxNDA.Checked;
+            Settings.Default.isKSXT = cboxKSXT.Checked;
+
             Settings.Default.Save();
 
             if (UDPSocket != null)
@@ -68,22 +60,6 @@ namespace ModSim
                 }
                 finally { UDPSocket.Close(); }
             }
-        }
-
-        private void FormSim_Resize(object sender, EventArgs e)
-        {
-        }
-
-
-
-        private void deviceManagerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Process.Start("devmgmt.msc");
-        }
-
-        private void btnResetTimer_Click(object sender, EventArgs e)
-        {
-            threeMinuteTimer = secondsSinceStart;
         }
 
         private void btnRelayTest_Click(object sender, EventArgs e)
