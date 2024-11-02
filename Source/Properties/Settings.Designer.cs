@@ -109,7 +109,7 @@ namespace ModSim.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
         public byte etIP_SubnetThree {
             get {
                 return ((byte)(this["etIP_SubnetThree"]));

@@ -409,6 +409,18 @@ namespace ModSim
                                     lblIPSet3.Text = data[9].ToString();
 
                                     TimedMessageBox(2000, "IP Set", "New Values Changed");
+
+                                    Properties.Settings.Default.etIP_SubnetOne = data[7];
+                                    Properties.Settings.Default.etIP_SubnetTwo = data[8];
+                                    Properties.Settings.Default.etIP_SubnetThree = data[9];
+                                    Properties.Settings.Default.Save();
+
+                                    YesMessageBox("ModSim will Restart to Enable UDP Networking Changes");
+
+                                    Application.Restart();
+                                    Environment.Exit(0);
+                                    Close();
+
                                 }
 
                                 break;

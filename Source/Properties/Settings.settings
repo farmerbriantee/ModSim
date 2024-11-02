@@ -24,7 +24,7 @@
       <Value Profile="(Default)">168</Value>
     </Setting>
     <Setting Name="etIP_SubnetThree" Type="System.Byte" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Setting" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
