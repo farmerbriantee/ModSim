@@ -37,6 +37,8 @@ namespace ModSim
             this.lbl9To16 = new System.Windows.Forms.Label();
             this.btnSteerButtonRemote = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSetGPM = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblSteerSwitchStatus = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lblAckerman = new System.Windows.Forms.Label();
@@ -147,6 +149,8 @@ namespace ModSim
             this.lblZone6 = new System.Windows.Forms.Label();
             this.lblZone7 = new System.Windows.Forms.Label();
             this.lblZone8 = new System.Windows.Forms.Label();
+            this.lblTotalVolume = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSteerAngleWAS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSpeed)).BeginInit();
@@ -222,6 +226,10 @@ namespace ModSim
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblTotalVolume);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lblSetGPM);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.lblSteerSwitchStatus);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.lblAckerman);
@@ -279,6 +287,32 @@ namespace ModSim
             this.groupBox1.TabIndex = 516;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Steer Module";
+            // 
+            // lblSetGPM
+            // 
+            this.lblSetGPM.AutoSize = true;
+            this.lblSetGPM.BackColor = System.Drawing.Color.SeaShell;
+            this.lblSetGPM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetGPM.ForeColor = System.Drawing.Color.Black;
+            this.lblSetGPM.Location = new System.Drawing.Point(234, 411);
+            this.lblSetGPM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSetGPM.Name = "lblSetGPM";
+            this.lblSetGPM.Size = new System.Drawing.Size(14, 19);
+            this.lblSetGPM.TabIndex = 562;
+            this.lblSetGPM.Text = ".";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(166, 411);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 19);
+            this.label8.TabIndex = 561;
+            this.label8.Text = "Set GPM";
             // 
             // lblSteerSwitchStatus
             // 
@@ -469,7 +503,7 @@ namespace ModSim
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(203, 255);
+            this.label9.Location = new System.Drawing.Point(203, 238);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 19);
@@ -482,7 +516,7 @@ namespace ModSim
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(184, 117);
+            this.label1.Location = new System.Drawing.Point(184, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
@@ -495,7 +529,7 @@ namespace ModSim
             this.lblUseY_Axis.BackColor = System.Drawing.Color.SeaShell;
             this.lblUseY_Axis.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUseY_Axis.ForeColor = System.Drawing.Color.Black;
-            this.lblUseY_Axis.Location = new System.Drawing.Point(278, 393);
+            this.lblUseY_Axis.Location = new System.Drawing.Point(278, 376);
             this.lblUseY_Axis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUseY_Axis.Name = "lblUseY_Axis";
             this.lblUseY_Axis.Size = new System.Drawing.Size(14, 19);
@@ -521,7 +555,7 @@ namespace ModSim
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(166, 140);
+            this.label3.Location = new System.Drawing.Point(166, 123);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 19);
@@ -534,7 +568,7 @@ namespace ModSim
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(156, 163);
+            this.label4.Location = new System.Drawing.Point(156, 146);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 19);
@@ -560,7 +594,7 @@ namespace ModSim
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(159, 186);
+            this.label5.Location = new System.Drawing.Point(159, 169);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 19);
@@ -586,7 +620,7 @@ namespace ModSim
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(213, 209);
+            this.label7.Location = new System.Drawing.Point(213, 192);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 19);
@@ -625,7 +659,7 @@ namespace ModSim
             this.lblCurrent.BackColor = System.Drawing.Color.SeaShell;
             this.lblCurrent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrent.ForeColor = System.Drawing.Color.Black;
-            this.lblCurrent.Location = new System.Drawing.Point(278, 370);
+            this.lblCurrent.Location = new System.Drawing.Point(278, 353);
             this.lblCurrent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrent.Name = "lblCurrent";
             this.lblCurrent.Size = new System.Drawing.Size(14, 19);
@@ -651,7 +685,7 @@ namespace ModSim
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(201, 278);
+            this.label11.Location = new System.Drawing.Point(201, 261);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 19);
@@ -677,7 +711,7 @@ namespace ModSim
             this.lblPressure.BackColor = System.Drawing.Color.SeaShell;
             this.lblPressure.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPressure.ForeColor = System.Drawing.Color.Black;
-            this.lblPressure.Location = new System.Drawing.Point(278, 347);
+            this.lblPressure.Location = new System.Drawing.Point(278, 330);
             this.lblPressure.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPressure.Name = "lblPressure";
             this.lblPressure.Size = new System.Drawing.Size(14, 19);
@@ -714,7 +748,7 @@ namespace ModSim
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(174, 324);
+            this.label18.Location = new System.Drawing.Point(174, 307);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(95, 19);
@@ -727,7 +761,7 @@ namespace ModSim
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(199, 301);
+            this.label13.Location = new System.Drawing.Point(199, 284);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 19);
@@ -740,7 +774,7 @@ namespace ModSim
             this.lblPulseCounts.BackColor = System.Drawing.Color.SeaShell;
             this.lblPulseCounts.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPulseCounts.ForeColor = System.Drawing.Color.Black;
-            this.lblPulseCounts.Location = new System.Drawing.Point(278, 324);
+            this.lblPulseCounts.Location = new System.Drawing.Point(278, 307);
             this.lblPulseCounts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPulseCounts.Name = "lblPulseCounts";
             this.lblPulseCounts.Size = new System.Drawing.Size(14, 19);
@@ -753,7 +787,7 @@ namespace ModSim
             this.lblShaftEnc.BackColor = System.Drawing.Color.SeaShell;
             this.lblShaftEnc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShaftEnc.ForeColor = System.Drawing.Color.Black;
-            this.lblShaftEnc.Location = new System.Drawing.Point(278, 301);
+            this.lblShaftEnc.Location = new System.Drawing.Point(278, 284);
             this.lblShaftEnc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblShaftEnc.Name = "lblShaftEnc";
             this.lblShaftEnc.Size = new System.Drawing.Size(14, 19);
@@ -766,7 +800,7 @@ namespace ModSim
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(204, 232);
+            this.label14.Location = new System.Drawing.Point(204, 215);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 19);
@@ -779,7 +813,7 @@ namespace ModSim
             this.lblSteerBtn.BackColor = System.Drawing.Color.SeaShell;
             this.lblSteerBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSteerBtn.ForeColor = System.Drawing.Color.Black;
-            this.lblSteerBtn.Location = new System.Drawing.Point(278, 278);
+            this.lblSteerBtn.Location = new System.Drawing.Point(278, 261);
             this.lblSteerBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSteerBtn.Name = "lblSteerBtn";
             this.lblSteerBtn.Size = new System.Drawing.Size(14, 19);
@@ -792,7 +826,7 @@ namespace ModSim
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(200, 347);
+            this.label15.Location = new System.Drawing.Point(200, 330);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 19);
@@ -805,7 +839,7 @@ namespace ModSim
             this.lblSteerSw.BackColor = System.Drawing.Color.SeaShell;
             this.lblSteerSw.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSteerSw.ForeColor = System.Drawing.Color.Black;
-            this.lblSteerSw.Location = new System.Drawing.Point(278, 255);
+            this.lblSteerSw.Location = new System.Drawing.Point(278, 238);
             this.lblSteerSw.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSteerSw.Name = "lblSteerSw";
             this.lblSteerSw.Size = new System.Drawing.Size(14, 19);
@@ -818,7 +852,7 @@ namespace ModSim
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(207, 370);
+            this.label16.Location = new System.Drawing.Point(207, 353);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 19);
@@ -831,7 +865,7 @@ namespace ModSim
             this.lblDanfoss.BackColor = System.Drawing.Color.SeaShell;
             this.lblDanfoss.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDanfoss.ForeColor = System.Drawing.Color.Black;
-            this.lblDanfoss.Location = new System.Drawing.Point(278, 232);
+            this.lblDanfoss.Location = new System.Drawing.Point(278, 215);
             this.lblDanfoss.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDanfoss.Name = "lblDanfoss";
             this.lblDanfoss.Size = new System.Drawing.Size(14, 19);
@@ -844,7 +878,7 @@ namespace ModSim
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(185, 393);
+            this.label28.Location = new System.Drawing.Point(185, 376);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(84, 19);
@@ -857,7 +891,7 @@ namespace ModSim
             this.lblCytron.BackColor = System.Drawing.Color.SeaShell;
             this.lblCytron.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCytron.ForeColor = System.Drawing.Color.Black;
-            this.lblCytron.Location = new System.Drawing.Point(278, 209);
+            this.lblCytron.Location = new System.Drawing.Point(278, 192);
             this.lblCytron.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCytron.Name = "lblCytron";
             this.lblCytron.Size = new System.Drawing.Size(14, 19);
@@ -870,7 +904,7 @@ namespace ModSim
             this.lblInvertWAS.BackColor = System.Drawing.Color.SeaShell;
             this.lblInvertWAS.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvertWAS.ForeColor = System.Drawing.Color.Black;
-            this.lblInvertWAS.Location = new System.Drawing.Point(278, 117);
+            this.lblInvertWAS.Location = new System.Drawing.Point(278, 100);
             this.lblInvertWAS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvertWAS.Name = "lblInvertWAS";
             this.lblInvertWAS.Size = new System.Drawing.Size(14, 19);
@@ -883,7 +917,7 @@ namespace ModSim
             this.lblSingleInputWAS.BackColor = System.Drawing.Color.SeaShell;
             this.lblSingleInputWAS.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSingleInputWAS.ForeColor = System.Drawing.Color.Black;
-            this.lblSingleInputWAS.Location = new System.Drawing.Point(278, 186);
+            this.lblSingleInputWAS.Location = new System.Drawing.Point(278, 169);
             this.lblSingleInputWAS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSingleInputWAS.Name = "lblSingleInputWAS";
             this.lblSingleInputWAS.Size = new System.Drawing.Size(14, 19);
@@ -896,7 +930,7 @@ namespace ModSim
             this.lblRelayActHigh.BackColor = System.Drawing.Color.SeaShell;
             this.lblRelayActHigh.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRelayActHigh.ForeColor = System.Drawing.Color.Black;
-            this.lblRelayActHigh.Location = new System.Drawing.Point(278, 140);
+            this.lblRelayActHigh.Location = new System.Drawing.Point(278, 123);
             this.lblRelayActHigh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRelayActHigh.Name = "lblRelayActHigh";
             this.lblRelayActHigh.Size = new System.Drawing.Size(14, 19);
@@ -909,7 +943,7 @@ namespace ModSim
             this.lblMotorDirection.BackColor = System.Drawing.Color.SeaShell;
             this.lblMotorDirection.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMotorDirection.ForeColor = System.Drawing.Color.Black;
-            this.lblMotorDirection.Location = new System.Drawing.Point(278, 163);
+            this.lblMotorDirection.Location = new System.Drawing.Point(278, 146);
             this.lblMotorDirection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMotorDirection.Name = "lblMotorDirection";
             this.lblMotorDirection.Size = new System.Drawing.Size(14, 19);
@@ -1712,13 +1746,39 @@ namespace ModSim
             this.lblZone8.TabIndex = 597;
             this.lblZone8.Text = "00000000";
             // 
+            // lblTotalVolume
+            // 
+            this.lblTotalVolume.AutoSize = true;
+            this.lblTotalVolume.BackColor = System.Drawing.Color.SeaShell;
+            this.lblTotalVolume.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVolume.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalVolume.Location = new System.Drawing.Point(234, 430);
+            this.lblTotalVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalVolume.Name = "lblTotalVolume";
+            this.lblTotalVolume.Size = new System.Drawing.Size(14, 19);
+            this.lblTotalVolume.TabIndex = 564;
+            this.lblTotalVolume.Text = ".";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(166, 430);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 19);
+            this.label10.TabIndex = 563;
+            this.label10.Text = "Volume";
+            // 
             // FormSim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(734, 517);
+            this.ClientSize = new System.Drawing.Size(721, 517);
             this.Controls.Add(this.lblZone8);
             this.Controls.Add(this.lblZone7);
             this.Controls.Add(this.lblZone6);
@@ -1901,6 +1961,10 @@ namespace ModSim
         private System.Windows.Forms.Label lblZone6;
         private System.Windows.Forms.Label lblZone7;
         private System.Windows.Forms.Label lblZone8;
+        private System.Windows.Forms.Label lblSetGPM;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTotalVolume;
+        private System.Windows.Forms.Label label10;
     }
 }
 

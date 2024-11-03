@@ -206,6 +206,12 @@ namespace ModSim
         int relayLoM = 0;
         int relayHiM = 0;
 
+        //Spray Controller
+        static byte[] PGN_224 = { 0x80, 0x81, 0x7f, 224, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0xCC };
+        int PGN_224_Size = PGN_224.Length - 1;
+        double volumePerMinuteSet=0;
+        double totalVolume = 0;
+
         private void ReceiveFromUDP(byte[] data)
         {
             try
@@ -215,6 +221,48 @@ namespace ModSim
                 {
                     switch (data[3])
                     {
+                        case 227:
+                            {
+                                volumePerMinuteSet = ((double)(data[7] | data[8] << 8)) * 0.01;
+                                lblSetGPM.Text = (Math.Round(volumePerMinuteSet)).ToString();
+
+                                //send back 224
+                                totalVolume += (volumePerMinuteSet / 300);
+                                lblTotalVolume.Text = totalVolume.ToString();
+                                int sa = (int)((totalVolume) * 10);
+
+                                //total volume
+                                PGN_224[5] = unchecked((byte)((int)(sa)));
+                                PGN_224[6] = unchecked((byte)((int)(sa) >> 8));
+
+                                //gpm actual      
+                                sa = (int)((volumePerMinuteSet * 1.01) * 100);
+                                PGN_224[7] = unchecked((byte)((int)(sa)));
+                                PGN_224[8] = unchecked((byte)((int)(sa) >> 8));
+
+                                //pressure
+                                PGN_224[9] = unchecked((byte)((int)(52)));
+
+                                
+                                //isFlowing
+                                PGN_224[10] = unchecked((byte)((int)(1) >> 8));
+
+                                //PWM +13
+                                PGN_224[11] = (byte)13;
+                                PGN_224[12] = (byte)1;
+
+                                //checksum
+                                int CK_A = 0;
+                                for (int i = 2; i < PGN_224_Size; i++)
+                                    CK_A = (CK_A + PGN_224[i]);
+
+                                PGN_224[PGN_224_Size] = unchecked((byte)((int)(CK_A)));
+
+                                SendUDPMessage(PGN_224);
+
+                                break;
+                            }
+
                         case 254:
                             {
                                 gpsSpeed = ((double)(data[5] | data[6] << 8)) * 0.1;
