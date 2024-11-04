@@ -211,6 +211,7 @@ namespace ModSim
         int PGN_224_Size = PGN_224.Length - 1;
         double volumePerMinuteSet=0;
         double totalVolume = 0;
+        double sectionPercent = 1;
 
         private void ReceiveFromUDP(byte[] data)
         {
@@ -224,11 +225,15 @@ namespace ModSim
                         case 227:
                             {
                                 volumePerMinuteSet = ((double)(data[7] | data[8] << 8)) * 0.01;
-                                lblSetGPM.Text = (Math.Round(volumePerMinuteSet)).ToString();
+                                lblSetGPM.Text = (Math.Round(volumePerMinuteSet,2)).ToString();
 
+                                sectionPercent = (double)(data[9]);
+                                lblBypassPercent.Text = (sectionPercent).ToString();
+                                sectionPercent *= 0.01;
+                                
                                 //send back 224
-                                totalVolume += (volumePerMinuteSet / 300);
-                                lblTotalVolume.Text = totalVolume.ToString();
+                                totalVolume += ((volumePerMinuteSet / 300) * sectionPercent);
+                                lblTotalVolume.Text = totalVolume.ToString("N1");
                                 int sa = (int)((totalVolume) * 10);
 
                                 //total volume
