@@ -35,6 +35,12 @@ namespace ModSim
             longitude = Settings.Default.setGPS_SimLongitude;
             nudLon.Value = (decimal)Settings.Default.setGPS_SimLongitude;
 
+            lblIPSet1.Text = Properties.Settings.Default.etIP_SubnetOne.ToString();
+            lblIPSet2.Text = Properties.Settings.Default.etIP_SubnetTwo.ToString();
+            lblIPSet3.Text = Properties.Settings.Default.etIP_SubnetThree.ToString();
+
+            lblScanReply.Text = "No";
+
             LoadUDPNetwork();
         }
 

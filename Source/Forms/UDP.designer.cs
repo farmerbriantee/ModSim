@@ -496,6 +496,9 @@ namespace ModSim
                                         Properties.Settings.Default.etIP_SubnetTwo,
                                         Properties.Settings.Default.etIP_SubnetThree, 23 };
 
+                                    lblScanReply.Text = "Yes";
+
+
                                     //checksum
                                     int CK_A = 0;
                                     for (int i = 2; i < scanReply.Length - 1; i++)

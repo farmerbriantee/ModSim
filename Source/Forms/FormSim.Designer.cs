@@ -37,12 +37,6 @@ namespace ModSim
             this.lbl9To16 = new System.Windows.Forms.Label();
             this.btnSteerButtonRemote = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblBypassPercent = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblTotalVolume = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblSetGPM = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblSteerSwitchStatus = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.lblAckerman = new System.Windows.Forms.Label();
@@ -92,6 +86,12 @@ namespace ModSim
             this.lblSingleInputWAS = new System.Windows.Forms.Label();
             this.lblRelayActHigh = new System.Windows.Forms.Label();
             this.lblMotorDirection = new System.Windows.Forms.Label();
+            this.lblBypassPercent = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblTotalVolume = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblSetGPM = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.cboxKSXT = new System.Windows.Forms.CheckBox();
             this.cboxNDA = new System.Windows.Forms.CheckBox();
             this.lblWAS = new System.Windows.Forms.Label();
@@ -153,6 +153,7 @@ namespace ModSim
             this.lblZone6 = new System.Windows.Forms.Label();
             this.lblZone7 = new System.Windows.Forms.Label();
             this.lblZone8 = new System.Windows.Forms.Label();
+            this.lblScanReply = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSteerAngleWAS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarSpeed)).BeginInit();
@@ -228,6 +229,7 @@ namespace ModSim
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblScanReply);
             this.groupBox1.Controls.Add(this.lblSteerSwitchStatus);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.lblAckerman);
@@ -285,84 +287,6 @@ namespace ModSim
             this.groupBox1.TabIndex = 516;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Steer Module";
-            // 
-            // lblBypassPercent
-            // 
-            this.lblBypassPercent.AutoSize = true;
-            this.lblBypassPercent.BackColor = System.Drawing.Color.SeaShell;
-            this.lblBypassPercent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBypassPercent.ForeColor = System.Drawing.Color.Black;
-            this.lblBypassPercent.Location = new System.Drawing.Point(232, 489);
-            this.lblBypassPercent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBypassPercent.Name = "lblBypassPercent";
-            this.lblBypassPercent.Size = new System.Drawing.Size(14, 19);
-            this.lblBypassPercent.TabIndex = 566;
-            this.lblBypassPercent.Text = ".";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(154, 489);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 19);
-            this.label12.TabIndex = 565;
-            this.label12.Text = "Bypass %";
-            // 
-            // lblTotalVolume
-            // 
-            this.lblTotalVolume.AutoSize = true;
-            this.lblTotalVolume.BackColor = System.Drawing.Color.SeaShell;
-            this.lblTotalVolume.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVolume.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalVolume.Location = new System.Drawing.Point(90, 510);
-            this.lblTotalVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalVolume.Name = "lblTotalVolume";
-            this.lblTotalVolume.Size = new System.Drawing.Size(14, 19);
-            this.lblTotalVolume.TabIndex = 564;
-            this.lblTotalVolume.Text = ".";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(28, 510);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 19);
-            this.label10.TabIndex = 563;
-            this.label10.Text = "Volume";
-            // 
-            // lblSetGPM
-            // 
-            this.lblSetGPM.AutoSize = true;
-            this.lblSetGPM.BackColor = System.Drawing.Color.SeaShell;
-            this.lblSetGPM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSetGPM.ForeColor = System.Drawing.Color.Black;
-            this.lblSetGPM.Location = new System.Drawing.Point(90, 489);
-            this.lblSetGPM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSetGPM.Name = "lblSetGPM";
-            this.lblSetGPM.Size = new System.Drawing.Size(14, 19);
-            this.lblSetGPM.TabIndex = 562;
-            this.lblSetGPM.Text = ".";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(22, 489);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 19);
-            this.label8.TabIndex = 561;
-            this.label8.Text = "Set Flow";
             // 
             // lblSteerSwitchStatus
             // 
@@ -785,7 +709,7 @@ namespace ModSim
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(9, 425);
+            this.label19.Location = new System.Drawing.Point(9, 418);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(86, 19);
             this.label19.TabIndex = 560;
@@ -999,6 +923,84 @@ namespace ModSim
             this.lblMotorDirection.Size = new System.Drawing.Size(14, 19);
             this.lblMotorDirection.TabIndex = 540;
             this.lblMotorDirection.Text = ".";
+            // 
+            // lblBypassPercent
+            // 
+            this.lblBypassPercent.AutoSize = true;
+            this.lblBypassPercent.BackColor = System.Drawing.Color.SeaShell;
+            this.lblBypassPercent.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBypassPercent.ForeColor = System.Drawing.Color.Black;
+            this.lblBypassPercent.Location = new System.Drawing.Point(232, 489);
+            this.lblBypassPercent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBypassPercent.Name = "lblBypassPercent";
+            this.lblBypassPercent.Size = new System.Drawing.Size(14, 19);
+            this.lblBypassPercent.TabIndex = 566;
+            this.lblBypassPercent.Text = ".";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(154, 489);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 19);
+            this.label12.TabIndex = 565;
+            this.label12.Text = "Bypass %";
+            // 
+            // lblTotalVolume
+            // 
+            this.lblTotalVolume.AutoSize = true;
+            this.lblTotalVolume.BackColor = System.Drawing.Color.SeaShell;
+            this.lblTotalVolume.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVolume.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalVolume.Location = new System.Drawing.Point(90, 510);
+            this.lblTotalVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalVolume.Name = "lblTotalVolume";
+            this.lblTotalVolume.Size = new System.Drawing.Size(14, 19);
+            this.lblTotalVolume.TabIndex = 564;
+            this.lblTotalVolume.Text = ".";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(28, 510);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 19);
+            this.label10.TabIndex = 563;
+            this.label10.Text = "Volume";
+            // 
+            // lblSetGPM
+            // 
+            this.lblSetGPM.AutoSize = true;
+            this.lblSetGPM.BackColor = System.Drawing.Color.SeaShell;
+            this.lblSetGPM.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetGPM.ForeColor = System.Drawing.Color.Black;
+            this.lblSetGPM.Location = new System.Drawing.Point(90, 489);
+            this.lblSetGPM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSetGPM.Name = "lblSetGPM";
+            this.lblSetGPM.Size = new System.Drawing.Size(14, 19);
+            this.lblSetGPM.TabIndex = 562;
+            this.lblSetGPM.Text = ".";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(22, 489);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 19);
+            this.label8.TabIndex = 561;
+            this.label8.Text = "Set Flow";
             // 
             // cboxKSXT
             // 
@@ -1804,6 +1806,19 @@ namespace ModSim
             this.lblZone8.TabIndex = 597;
             this.lblZone8.Text = "00000000";
             // 
+            // lblScanReply
+            // 
+            this.lblScanReply.BackColor = System.Drawing.Color.Transparent;
+            this.lblScanReply.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScanReply.ForeColor = System.Drawing.Color.Black;
+            this.lblScanReply.Location = new System.Drawing.Point(93, 418);
+            this.lblScanReply.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblScanReply.Name = "lblScanReply";
+            this.lblScanReply.Size = new System.Drawing.Size(40, 19);
+            this.lblScanReply.TabIndex = 561;
+            this.lblScanReply.Text = "No";
+            this.lblScanReply.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormSim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -2005,6 +2020,7 @@ namespace ModSim
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblBypassPercent;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblScanReply;
     }
 }
 
